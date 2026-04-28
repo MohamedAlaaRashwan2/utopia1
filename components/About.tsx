@@ -7,6 +7,7 @@ import GlassCard from "../components/GlassCard";
 import SectionReveal from "../components/SectionReveal";
 import GlowButton from "../components/GlowButton";
 
+
 // Journey Timeline Data
 const journeySteps = [
   {
@@ -133,7 +134,7 @@ function FloatingParticles() {
           key={particle.id}
           initial={{ opacity: 0, scale: 0 }}
           animate={{
-            opacity: [0, 0.6, 0],
+            opacity: [0, 1, 0],
             scale: [0, 1, 0],
             y: [0, -100],
           }}
