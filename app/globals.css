@@ -5,6 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --maneColor1: #2e2157
+  --maneColor2: #4f029d
+  --maneColor3: #28c8b6
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
