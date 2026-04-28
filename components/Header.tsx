@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Diamond, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion";
+import Lenis from "lenis";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -20,20 +21,33 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const lenis = new Lenis();
+    (window as any).lenis = lenis;
+  
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+  
+    requestAnimationFrame(raf);
+  
+    return () => lenis.destroy();
   }, []);
+  const scrollTo = (target: string) => {
+    const el = document.querySelector(target);
+    if (!el) return;
+  
+    const lenis = (window as any).lenis;
+    lenis?.scrollTo(el);
+  };
 
   return (
     <>
       <motion.nav
         initial={{ y: -100 }}
-        animate={{ y: 0 }}
+        animate={{ y: 20 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`glass-apple w-[90%] mx-auto fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? "glass-strong py-3"
             : "bg-transparent py-5"
@@ -54,14 +68,14 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
-                <motion.a
+                <motion.button
+                  onClick={() => scrollTo(link.href)}
                   key={link.name}
-                  href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-white/70 hover:text-white rounded-lg hover:bg-white/5 transition-colors duration-200"
+                  className="cursor-pointer px-4 py-2 text-sm font-medium text-white/70 hover:text-white rounded-lg hover:bg-white/5 transition-colors duration-200"
                   whileHover={{ scale: 1.05 }}
                 >
                   {link.name}
-                </motion.a>
+                </motion.button>
               ))}
             </div>
 

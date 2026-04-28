@@ -3,49 +3,50 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import SectionReveal from "../components/SectionReveal";
+import Image from "next/image";
 
 const projects = [
   {
     title: "Luminex Platform",
     category: "SaaS Dashboard",
-    description: "AI-powered analytics dashboard with real-time data visualization.",
-    color: "from-[#28c8b6] to-[#06b6d4]",
-    gradient: "bg-gradient-to-br from-[#28c8b6]/20 to-[#06b6d4]/20",
+    description:
+      "AI-powered analytics dashboard with real-time data visualization.",
+    image: "/p2.jpeg",
   },
   {
     title: "Nova Finance",
     category: "Fintech App",
-    description: "Mobile-first banking experience with seamless transactions.",
-    color: "from-[#4f029d] to-[#7c3aed]",
-    gradient: "bg-gradient-to-br from-[#4f029d]/20 to-[#7c3aed]/20",
+    description:
+      "Mobile-first banking experience with seamless transactions.",
+    image: "/p3.jpeg",
   },
   {
     title: "Zenith Health",
     category: "Healthcare Platform",
-    description: "Telemedicine platform connecting patients with specialists.",
-    color: "from-[#28c8b6] to-[#4f029d]",
-    gradient: "bg-gradient-to-br from-[#28c8b6]/20 to-[#4f029d]/20",
+    description:
+      "Telemedicine platform connecting patients with specialists.",
+    image: "/p4.jpeg",
   },
   {
     title: "Pulse Commerce",
     category: "E-commerce",
-    description: "Next-gen shopping experience with AR product preview.",
-    color: "from-[#7c3aed] to-[#06b6d4]",
-    gradient: "bg-gradient-to-br from-[#7c3aed]/20 to-[#06b6d4]/20",
+    description:
+      "Next-gen shopping experience with AR product preview.",
+    image: "/p5.jpeg",
   },
   {
     title: "Aurora Creative",
     category: "Brand Identity",
-    description: "Complete rebrand for a global creative agency.",
-    color: "from-[#28c8b6] to-[#7c3aed]",
-    gradient: "bg-gradient-to-br from-[#28c8b6]/20 to-[#7c3aed]/20",
+    description:
+      "Complete rebrand for a global creative agency.",
+    image: "/p6.jpeg",
   },
   {
     title: "Stellar Social",
     category: "Social Platform",
-    description: "Community-driven platform with advanced engagement tools.",
-    color: "from-[#4f029d] to-[#06b6d4]",
-    gradient: "bg-gradient-to-br from-[#4f029d]/20 to-[#06b6d4]/20",
+    description:
+      "Community-driven platform with advanced engagement tools.",
+    image: "/p1.jpeg",
   },
 ];
 
@@ -57,9 +58,11 @@ export default function Projects() {
           <span className="inline-block px-4 py-1.5 rounded-full glass-card text-sm font-medium text-[#28c8b6] mb-4">
             Portfolio
           </span>
+
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-[var(--font-space-grotesk)] text-white mb-6">
             Featured <span className="text-gradient">Projects</span>
           </h2>
+
           <p className="max-w-2xl mx-auto text-lg text-white/60">
             Explore our latest work and see how we help brands achieve their digital goals.
           </p>
@@ -76,25 +79,34 @@ export default function Projects() {
               className="group relative"
             >
               <div className="relative overflow-hidden rounded-2xl glass-card aspect-[4/3] cursor-pointer">
-                {/* Background gradient */}
-                <div className={`absolute inset-0 ${project.gradient} transition-transform duration-500 group-hover:scale-110`} />
-                
-                {/* Abstract shape */}
-                <div className={`absolute inset-0 flex items-center justify-center`}>
-                  <div className={`w-32 h-32 rounded-full bg-gradient-to-br ${project.color} opacity-40 blur-2xl group-hover:scale-150 transition-transform duration-700`} />
-                </div>
 
-                {/* Content overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f0a1a] via-[#0f0a1a]/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                {/* 🔥 Background Image */}
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[1px]"
+                />
+
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/40" />
+
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f0a1a] via-[#0f0a1a]/60 to-transparent" />
+
+                {/* Glow overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
 
                 {/* Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
                   <span className="text-sm font-medium text-[#28c8b6] mb-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     {project.category}
                   </span>
+
                   <h3 className="text-xl font-bold font-[var(--font-space-grotesk)] text-white mb-2 group-hover:text-[#28c8b6] transition-colors duration-300">
                     {project.title}
                   </h3>
+
                   <p className="text-sm text-white/60 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">
                     {project.description}
                   </p>
@@ -112,4 +124,3 @@ export default function Projects() {
     </section>
   );
 }
-

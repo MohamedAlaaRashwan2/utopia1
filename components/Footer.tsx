@@ -2,12 +2,32 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
+import Image from "next/image";
 const footerLinks = {
-  Services: ["UI/UX Design", "Web Development", "Branding", "Marketing"],
-  Company: ["About Us", "Careers", "Blog", "Press"],
-  Resources: ["Documentation", "Help Center", "Privacy Policy", "Terms"],
-  Social: ["Twitter", "LinkedIn", "Instagram", "Dribbble"],
+  Services: [
+    { name: "UI/UX Design", href: "#" },
+    { name: "Web Development", href: "#" },
+    { name: "Branding", href: "#" },
+    { name: "Marketing", href: "#" },
+  ],
+  Company: [
+    { name: "About Us", href: "#" },
+    { name: "Careers", href: "#" },
+    { name: "Blog", href: "#" },
+    { name: "Press", href: "#" },
+  ],
+  Resources: [
+    { name: "Documentation", href: "#" },
+    { name: "Help Center", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms", href: "#" },
+  ],
+  Social: [
+    { name: "Instagram", href: "https://www.instagram.com/utopiaagency_eg?igsh=dnBteDA5M2JmNGY2" },
+    { name: "Facebook", href: "https://www.facebook.com/share/1Craey6F7P/?mibextid=wwXIfr" },
+    { name: "TikTok", href: "https://www.tiktok.com/@utopiaagency_eg?_r=1&_t=ZS-95vS3Qk6JEr" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/utopia-marketing-b23623329/" },
+  ],
 };
 
 export default function Footer() {
@@ -50,12 +70,13 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3">
                 {links.map((link) => (
-                  <li key={link}>
+                  <li key={link.name}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-white/50 hover:text-[#28c8b6] transition-colors text-sm"
+                      target="blaink"
                     >
-                      {link}
+                      {link.name}
                     </a>
                   </li>
                 ))}
@@ -67,12 +88,8 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="glass-card px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#28c8b6] to-[#4f029d] flex items-center justify-center">
-              <span className="text-white font-bold text-sm">U</span>
-            </div>
-            <span className="text-white font-bold font-[var(--font-space-grotesk)]">
-              Utopia
-            </span>
+          <Image src="/LOGO1.png" alt="Logo" width={100} height={100} />
+
           </div>
           <p className="text-white/40 text-sm text-center">
             &copy; {new Date().getFullYear()} Utopia Agency. All rights reserved.

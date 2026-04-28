@@ -71,7 +71,7 @@ export default function Services() {
           </p>
         </SectionReveal>
 
-        <div className="grid b grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <GlassCard
               key={service.title}
@@ -79,7 +79,7 @@ export default function Services() {
               glow="teal"
               className="group relative overflow-hidden"
             >
-              <div className="relative z-10">
+              <div className="relative  z-10">
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 "
                   style={{

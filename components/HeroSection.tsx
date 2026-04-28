@@ -15,7 +15,7 @@ const brandLogos = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-black via-[#0a0a0a] to-black flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+    <section id='home' className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-black via-[#0a0a0a] to-black flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       {/* Background Shader Layers */}
         <div className="absolute inset-0 z-0">
         <DotField

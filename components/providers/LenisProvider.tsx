@@ -1,23 +1,30 @@
 "use client";
 
-import { type ReactNode, useMemo } from "react";
-import { useLenis } from "@/hooks/useLenis";
+import Lenis from "lenis";
+import { useEffect } from "react";
 
-type LenisProviderProps = {
-  children: ReactNode;
-};
+export default function LenisProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
+    });
 
-export default function LenisProvider({ children }: LenisProviderProps) {
-  const lenisOptions = useMemo(
-    () => ({
-      duration: 1.1,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.6,
-    }),
-    [],
-  );
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-  useLenis(lenisOptions);
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   return <>{children}</>;
 }
