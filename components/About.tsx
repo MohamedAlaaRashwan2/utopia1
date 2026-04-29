@@ -261,7 +261,7 @@ function JourneySection() {
           {/* Vertical line */}
           <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#28c8b6]/30 to-transparent hidden md:block" />
           {/* Mobile horizontal line */}
-          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-[#28c8b6]/30 to-transparent md:hidden" />
+          <div className="absolute left-0 hidden md:block  right-0 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-[#28c8b6]/30 to-transparent md:hidden" />
 
           <div className="space-y-8 md:space-y-0">
             {journeySteps.map((step, index) => (
