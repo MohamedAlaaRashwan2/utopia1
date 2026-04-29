@@ -66,7 +66,7 @@ const team = [
   {
     id: 7,
     name: "Norhan Elshandidy",
-    image: "/nora.png",
+    image: "/nour.png",
     role: "Operation Manager",
     initials: "AR",
     color: "from-[#28c8b6] to-[#06b6d4]",

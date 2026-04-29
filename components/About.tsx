@@ -482,7 +482,7 @@ function FieldsSection() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     className="text-5xl mb-6"
                   >
-                  <field.icon className=" text-[#28c8b6] " size={3هؤخى0} />
+                  <field.icon className=" text-[#28c8b6] " size={30} />
                   </motion.div>
                   <h3 className="text-xl font-bold text-white mb-2 font-[var(--font-space-grotesk)]">
                     {field.title}
