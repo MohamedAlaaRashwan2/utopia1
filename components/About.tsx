@@ -1,11 +1,13 @@
 "use client";
-
+import { GiChart } from "react-icons/gi";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import { BookOpen, GraduationCap, Users, Globe, FlaskConical, ArrowDown, ChevronRight } from "lucide-react";
 import GlassCard from "../components/GlassCard";
 import SectionReveal from "../components/SectionReveal";
 import GlowButton from "../components/GlowButton";
+import { LuLandmark, LuBriefcaseMedical  } from "react-icons/lu";
+import { BsCart2 } from "react-icons/bs";
 
 
 // Journey Timeline Data
@@ -42,25 +44,25 @@ const fields = [
   {
     id: "economic",
     title: "Economic",
-    icon: "📊",
+    icon: GiChart,
     description: "Understanding market dynamics, financial systems, and economic trends that drive business decisions.",
   },
   {
     id: "political",
     title: "Political",
-    icon: "🏛️",
+    icon: LuLandmark,
     description: "Navigating the complex landscape of political influences on commerce and public perception.",
   },
   {
     id: "medical",
     title: "Medical",
-    icon: "🏥",
+    icon: LuBriefcaseMedical,
     description: "Healthcare marketing requires empathy, accuracy, and strict adherence to ethical standards.",
   },
   {
     id: "commercial",
     title: "Commercial",
-    icon: "💼",
+    icon: BsCart2,
     description: "Creating strategies that connect products with consumers in meaningful, profitable ways.",
   },
 ];
@@ -107,9 +109,10 @@ function AnimatedText({ text, className }: { text: string; className?: string })
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.08, duration: 0.4 }}
-          className="inline-block mr-2"
+          className="inline-block mr-2 text-white"
         >
           {word}
+          
         </motion.span>
       ))}
     </span>
@@ -474,12 +477,12 @@ function FieldsSection() {
                 delay={0.1}
                 className="h-full"
               >
-                <div className="text-center">
+                <div className="flex flex-col justify-center items-center">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="text-5xl mb-4"
+                    className="text-5xl mb-6"
                   >
-                    {field.icon}
+                  <field.icon className=" text-[#28c8b6] " size={3هؤخى0} />
                   </motion.div>
                   <h3 className="text-xl font-bold text-white mb-2 font-[var(--font-space-grotesk)]">
                     {field.title}
@@ -643,7 +646,7 @@ function GuidanceSection() {
                   whileHover={{ scale: 1.1 }}
                   className="relative z-10 w-16 sm:w-20 h-16 sm:h-20 rounded-2xl glass-card flex items-center justify-center flex-shrink-0 border-2 border-[#28c8b6]/30 hover:border-[#28c8b6]/60 transition-colors"
                 >
-                  <span className="text-xl sm:text-2xl font-bold text-gradient font-[var(--font-space-grotesk)]">
+                  <span className="text-xl sm:text-2xl font-bold text-white  font-[var(--font-space-grotesk)]">
                     {step.number}
                   </span>
                   {/* Glow effect */}
