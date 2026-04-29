@@ -80,22 +80,24 @@ export default function Team() {
         <Swiper
           modules={[Pagination, Autoplay]}
           spaceBetween={50}
-          loop={false}
+          loop={true}
           speed={600}
           grabCursor={true}
+          centeredSlides={true}
           pagination={{ clickable: true }}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           breakpoints={{
             0: { slidesPerView: 1 },
             640: { slidesPerView: 2 },
-            1024: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
             1280: { slidesPerView: 3 },
-          }}
+          }}  
         >
           {team.map((member, index) => (
             <SwiperSlide key={member.id}>
               <div
-                className="relative z-10 px-2">
+                className="relative z-10  px-2"
+                id= "221">
                 <ProfileCard
                   behindGlowEnabled = {true}
                 name={member.name}

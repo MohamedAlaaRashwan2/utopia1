@@ -65,7 +65,7 @@ export default function HeroSection() {
           >
             <Sparkles className="w-4 h-4 text-[#28c8b6]" />
             <span className="text-sm text-white/80">
-              Award-Winning Digital Agency
+            The Website is still under development
             </span>
           </motion.div>
         {/* Headline */}

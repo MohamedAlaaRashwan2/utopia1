@@ -362,7 +362,7 @@ function PhilosophySection() {
                     whileHover={{ scale: 1.02, x: 10 }}
                     className="text-2xl sm:text-3xl md:text-4xl font-bold font-[var(--font-space-grotesk)] text-white leading-tight cursor-pointer"
                   >
-                    <span className="text-[#28c8b6] mr-3">//</span>
+                    <span className="text-[#28c8b6] mr-3">-</span>
                     {statement}
                   </motion.p>
                   <motion.div
@@ -626,7 +626,7 @@ function GuidanceSection() {
         {/* Path UI */}
         <div className="relative">
           {/* Vertical connecting line */}
-          <div className="absolute left-8 sm:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-[#28c8b6]/50 via-[#4f029d]/30 to-[#28c8b6]/50" />
+          {/* <div className="absolute left-8 sm:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-[#28c8b6]/50 via-[#4f029d]/30 to-[#28c8b6]/50" /> */}
 
           <div className="space-y-8">
             {guidanceSteps.map((step, index) => (
@@ -659,7 +659,7 @@ function GuidanceSection() {
                 </div>
 
                 {/* Connector dot */}
-                <div className="absolute left-8 sm:left-12 top-8 sm:top-10 -translate-x-1/2 w-3 h-3 rounded-full bg-[#28c8b6] shadow-[0_0_10px_rgba(40,200,182,0.5)]" />
+                {/* <div className="absolute left-8 sm:left-12 top-8 sm:top-10 -translate-x-1/2 w-3 h-3 rounded-full bg-[#28c8b6] shadow-[0_0_10px_rgba(40,200,182,0.5)]" /> */}
               </motion.div>
             ))}
           </div>

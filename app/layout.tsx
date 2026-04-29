@@ -43,7 +43,9 @@ export const metadata: Metadata = {
   creator: "Utopia Agency",
 
   icons: {
-    icon: "/favicon.png"
+    icon: [
+      { url: "/favicon.png", type: "image/png" }
+    ],
   },
 
   openGraph: {
