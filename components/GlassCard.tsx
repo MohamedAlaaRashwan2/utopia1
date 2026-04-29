@@ -30,10 +30,10 @@ export default function GlassCard({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+      transition={{ duration: 0.5, delay, ease: "easeInOut" }}
       className={`
           glass-card p-6 md:p-8
-          transition-all duration-300
+          duration-300
       `}
     >
       {children}

@@ -1,14 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Globe, MessageSquare } from "lucide-react";
-import GlassCard from "../components/GlassCard";
 import SectionReveal from "../components/SectionReveal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import ProfileCard from '@/app/components/ProfileCard';
 
-// ✅ مهم جدًا
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -35,7 +31,7 @@ const team = [
     id: 3,
     name: "Mohamed Magdy",
     image: "/hamsa.png",
-    role: "Medoa Production Manager",
+    role: "Media Production Manager",
     initials: "AR",
     color: "from-[#28c8b6] to-[#06b6d4]",
     email: "rashwan.site",
@@ -47,16 +43,43 @@ const team = [
     role: "CO-Founder & CEO",
     initials: "AR",
     color: "from-[#28c8b6] to-[#06b6d4]",
-    email: "rashwan.site",
+    email: "#",
   },
   {
     id: 5,
     name: "Mustafa Alaa",
     image: "/mostafa.png",
-    role: "Founder & CTO",
+    role: "Founder",
     initials: "AR",
     color: "from-[#28c8b6] to-[#06b6d4]",
-    email: "rashwan.site",
+    email: "#",
+  },
+  {
+    id: 6,
+    name: "Sara ELshorbagy",
+    image: "/sara.png",
+    role: "Moderation",
+    initials: "AR",
+    color: "from-[#28c8b6] to-[#06b6d4]",
+    email: "#",
+  },
+  {
+    id: 7,
+    name: "Norhan Elshandidy",
+    image: "/nora.png",
+    role: "Operation Manager",
+    initials: "AR",
+    color: "from-[#28c8b6] to-[#06b6d4]",
+    email: "#",
+  },
+  {
+    id: 8,
+    name: "Ahmed Metwaly",
+    image: "/ahmed.png",
+    role: "Garphic Designer",
+    initials: "AR",
+    color: "from-[#28c8b6] to-[#06b6d4]",
+    email: "#",
   },
 ];
 

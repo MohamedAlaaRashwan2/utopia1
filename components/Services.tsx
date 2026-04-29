@@ -74,38 +74,33 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <GlassCard
-              key={service.title}
-              delay={index * 0.1}
-              glow="teal"
-              className="group relative overflow-hidden"
-            >
-              <div className="relative  z-10">
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 "
-                  style={{
-                    background: `linear-gradient(135deg, ${service.color}20, ${service.color}10)`,
-                    border: `1px solid ${service.color}30`,
-                  }}
-                >
-                  <service.icon
-                    className="w-7 h-7"
-                    style={{ color: service.color }}
-                  />
-                </div>
-                <h3 className="text-2xl font-bold font-[var(--font-space-grotesk)] text-white mb-3 group-hover:text-[#28c8b6] transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
+            key={service.title}
+            delay={index * 0.1}
+            glow="teal"
+            className="group relative overflow-hidden h-full flex flex-col"
+          >
+            <div className="relative z-10 flex flex-col h-full">
               
-              {/* Hover glow effect */}
               <div
-                className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: service.color }}
-              />
-            </GlassCard>
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                style={{
+                  background: `linear-gradient(135deg, ${service.color}20, ${service.color}10)`,
+                  border: `1px solid ${service.color}30`,
+                }}
+              >
+                <service.icon className="w-7 h-7" style={{ color: service.color }} />
+              </div>
+          
+              <h3 className="text-2xl font-bold text-white mb-3">
+                {service.title}
+              </h3>
+          
+              <p className="text-white/60 text-sm leading-relaxed flex-1">
+                {service.description}
+              </p>
+          
+            </div>
+          </GlassCard>
           ))}
         </div>
       </div>
