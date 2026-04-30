@@ -130,7 +130,7 @@ export default function Team() {
                 contactText="Contact Me"
                 avatarUrl={member.image}
                 miniAvatarUrl={member.image}
-                showUserInfo={true}
+                showUserInfo={false}
                 enableTilt={true}
                 enableMobileTilt={false}
                 onContactClick={() => window.open(`https://${member.email}`, '_blank')}
